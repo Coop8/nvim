@@ -79,6 +79,7 @@ return require("packer").startup(function()
   }
 
   -- Nvim-tree
+  use { 'nvim-tree/nvim-web-devicons' }
   use {
   'nvim-tree/nvim-tree.lua',
     requires = {
@@ -86,5 +87,26 @@ return require("packer").startup(function()
   },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+  
+  -- Autopairs
+  use {
+	  "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- Barbar
+  use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
+
+  -- Startup
+  use {
+    "startup-nvim/startup.nvim",
+    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    config = function()
+      require"startup".setup()
+    end
+  }
+
+  -- Whichkey
+  use { "folke/which-key.nvim" }
 
 end)

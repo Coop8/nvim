@@ -16,3 +16,7 @@ require('coop.Plugins.treesitter-config')
 require('coop.Plugins.nvimtree-config')
 
 require('coop.Plugins/cmp-config')
+
+require('coop.Plugins/nvimstartup-config')
+
+require('coop.Plugins/whichkey-config')
